@@ -27,7 +27,7 @@ export default({ config, db }) => {
   });
 
   // '/v1/recipe/add' - POST - add a test acct
-  api.post('/add', (req, res) => {
+  api.post('/add', (req, res) => { 
     let newRecipe = new Recipe();
     newRecipe.name = req.body.title;
     newRecipe.ingredients = req.body.ingredients;
@@ -59,8 +59,8 @@ export default({ config, db }) => {
       if (err) {
         res.send(err);
       }
-      newRecipe.name = req.body.name;
-      newRecipe.ratio = req.body.ratio;
+      recipe.name = req.body.title;
+      recipe.ingredients = req.body.ingredients;
       
       recipe.save(function(err) {
         if (err) {
